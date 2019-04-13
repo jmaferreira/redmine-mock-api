@@ -14,7 +14,7 @@ const MAX_ISSUES_PER_MINUTE = 5;
 router.get('/', function (req, res, next) {
   let { after, limit = 1000 } = req.query;
 
-  if (!after) return res.status(400).jsonp({ errorMessage: 'after=yyyy-mm-ddThh:mmZ ISO 8601 datetime parameter missing from query string' })
+  if (!after) return res.status(400).jsonp({ errorMessage: 'Datetime parameter missing from query string, e.g. after=2019-04-13T22:00Z ISO 8601 ' })
   if (new Date(after) >= new Date()) return res.status(400).jsonp({ errorMessage: 'Provided date must be in the past' })
 
   try {
@@ -93,7 +93,7 @@ function getRandomAuthor() {
 }
 
 function getRandomAssignee() {
-  let randomIndex = randomInt(1, 10);
+  let randomIndex = randomInt(1, NUMBER_SUPPORT_STAFF);
   let user = users[randomIndex];
   return {
     "assignee": {
