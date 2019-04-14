@@ -85,10 +85,8 @@ function getRandomAuthor() {
   let randomIndex = randomInt(11, 100 - 1);
   let user = users[randomIndex];
   return {
-    "author": {
-      "id": user.id,
-      "name": `${user.firstname} ${user.lastname}`
-    }
+    "id": user.id,
+    "name": `${user.firstname} ${user.lastname}`
   };
 }
 
@@ -96,10 +94,8 @@ function getRandomAssignee() {
   let randomIndex = randomInt(1, NUMBER_SUPPORT_STAFF);
   let user = users[randomIndex];
   return {
-    "assignee": {
-      "id": user.id,
-      "name": `${user.firstname} ${user.lastname}`
-    }
+    "id": user.id,
+    "name": `${user.firstname} ${user.lastname}`
   };
 }
 
@@ -111,20 +107,16 @@ function randomInt(min = 0, max = 1) {
 function getRandomPriority() {
 
   let priorities = [{
-    "priority": {
-      "id": 5,
-      "name": "High (1 day)"
-    }
+    "id": 5,
+    "name": "High (1 day)"
   }, {
-    "priority": {
-      "id": 4,
-      "name": "Normal (5 days)"
-    }
+    "id": 4,
+    "name": "Normal (5 days)"
+
   }, {
-    "priority": {
-      "id": 3,
-      "name": "Low (10 days)"
-    }
+    "id": 3,
+    "name": "Low (10 days)"
+
   }]
   let randomIndex = randomInt(0, 2);
   return priorities[randomIndex];
@@ -144,16 +136,16 @@ function getRandomClient() {
   let randomIndex = randomInt(0, clients.length - 1);
   return clients[randomIndex];
 }
+
 function getRandomProject() {
   let product = getRandomProduct();
   let client = getRandomClient();
 
   return {
-    "project": {
-      "id": randomInt(1, 1000),
-      "name": `Helpdesk | ${product}@${client}`
-    }
+    "id": randomInt(1, 1000),
+    "name": `Helpdesk | ${product}@${client}`
   }
+
 }
 
 function getRandomTracker() {
