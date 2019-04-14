@@ -22,9 +22,9 @@ router.get('/', function (req, res, next) {
     let minutesSinceAfter = minutesBetween(new Date(after), new Date());
     let numberIssuesToGenerate = Math.min(minutesSinceAfter * numberOfIssuesPerMinute, limit);
 
-    console.debug("No of issues to be generated", numberIssuesToGenerate)
-    console.debug("minutesSinceAfter", minutesSinceAfter)
-    console.debug("numberOfIssuesPerMinute", numberOfIssuesPerMinute)
+    // console.debug("No of issues to be generated", numberIssuesToGenerate)
+    // console.debug("minutesSinceAfter", minutesSinceAfter)
+    // console.debug("numberOfIssuesPerMinute", numberOfIssuesPerMinute)
 
     let generatedIssues = [];
     for (let i = 0; i < numberIssuesToGenerate; i++) {
