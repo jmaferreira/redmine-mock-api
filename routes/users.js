@@ -7,12 +7,12 @@ var users = require('../data/users.json').users;
 router.get('/', async function (req, res, next) {
   let { forceMail } = req.query;
   if (forceMail) {
-    let users = users.map(e => {
+    let users2 = users.map(e => {
       if (e.id > 10) e.mail = forceMail
       return e;
     });
   }
-  res.jsonp(users);
+  res.jsonp(users2);
 });
 
 
