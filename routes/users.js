@@ -8,12 +8,12 @@ router.get('/', async function (req, res, next) {
   let { forceMail } = req.query;
 
   if (forceMail) {
-    let users2 = users.map(e => {
+    users = users.map(e => {
       if (e.id > 10) e.mail = forceMail
       return e;
     });
   }
-  res.jsonp(users2);
+  res.jsonp(users);
 });
 
 
